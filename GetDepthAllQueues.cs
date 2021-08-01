@@ -1,7 +1,4 @@
 using System;
-using Microsoft.WindowsAzure.Storage;
-using System.Net;
-using Newtonsoft.Json;
 using Azure.Storage.Queues; 
 using Azure.Storage.Queues.Models; 
 using Microsoft.Azure.WebJobs;
