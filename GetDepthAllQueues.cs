@@ -29,7 +29,8 @@ namespace prbeegala.functions
                     myqueue_client = serviceClient.GetQueueClient(q.Name);
                     QueueProperties properties2 = myqueue_client.GetProperties();
                     int cachedMessagesCount2 = properties2.ApproximateMessagesCount;
-                    Console.WriteLine(q.Name+"==="+cachedMessagesCount2);
+                    //Console.WriteLine(q.Name+"==="+cachedMessagesCount2);
+                    log.Info($"C# Timer trigger function executed at: {q.Name+"==="+cachedMessagesCount2}");
                 }
 
             }
