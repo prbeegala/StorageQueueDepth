@@ -27,20 +27,12 @@ namespace prbeegala.functions
                 foreach (QueueItem q in queuePage.Values)
                 {
                     myqueue_client = serviceClient.GetQueueClient(q.Name);
-                    QueueProperties properties2 = myqueue_client.GetProperties();
-                    int cachedMessagesCount2 = properties2.ApproximateMessagesCount;
-                    //Console.WriteLine(q.Name+"==="+cachedMessagesCount2);
-                    log.Info($"C# Timer trigger function executed at: {q.Name+"==="+cachedMessagesCount2}");
+                    QueueProperties properties = myqueue_client.GetProperties();
+                    int cachedMessagesCount = properties.ApproximateMessagesCount;
+                    log.Info($"C# Timer trigger function executed at: {q.Name+"==="+cachedMessagesCount}");
                 }
 
-            }
-            /* For reference, to get the count from a named queue
-            var queueName = "processorders";
-            QueueClient queueClient = new QueueClient(connectionString, queueName);
-            QueueProperties properties = queueClient.GetProperties();
-            // Retrieve the cached approximate message count.
-            int cachedMessagesCount = properties.ApproximateMessagesCount;
-            */
+            }            
         }
     }
 }
